@@ -15,12 +15,12 @@ create table Cities
 )
 
 insert into Cities (Id, Name, Country)
-	values ('MSK', 'Минск', 'Республика Беларусь'),
-			('BST', 'Брест', 'Республика Беларусь'),
-			('GML', 'Гомель', 'Республика Беларусь'),
-			('MGL', 'Могилев', 'Республика Беларусь'),
-			('VTBK', 'Витебск', 'Республика Беларусь'),
-			('GDN', 'Гродно', 'Республика Беларусь')
+	values ('MSK', 'Minsk', 'Republic of Belarus'),
+			('BST', 'Brest', 'Republic of Belarus'),
+			('GML', 'Gomel', 'Republic of Belarus'),
+			('MGL', 'Mogilev', 'Republic of Belarus'),
+			('VTBK', 'Vitebsk', 'Republic of Belarus'),
+			('GDN', 'Grodno', 'Republic of Belarus')
 
 select * from Cities
 go
@@ -32,12 +32,12 @@ create table Banks
 )
 
 insert into Banks (Id, Name)
-	values ('BAPB', 'Белагропромбанк'),
-			('AKBB', 'Беларусбанк'),
-			('BLBB', 'Белинвестбанк'),
-			('ALFA', 'Альфа-Банк'),
-			('POIS', 'Паритетбанк'),
-			('PJCB', 'Приорбанк')
+	values ('BAPB', 'Belagroprombank'),
+			('AKBB', 'Belarusbank'),
+			('BLBB', 'Belinvestbank'),
+			('ALFA', 'Alpha-Bank'),
+			('POIS', 'Paritetbank'),
+			('PJCB', 'Priorbank')
 
 select * from Banks
 go
@@ -53,13 +53,13 @@ create table Banks_Branches
 )
 
 insert into Banks_Branches(Id, Bank, City, Address)
-	values (1001, 'AKBB', 'MSK', 'г.Минск, пр. Независимости, 91'),
-			(2001, 'AKBB', 'MGL', 'г.Могилев, пр. Пушкинский, 34-41'),
-			(1045, 'BAPB', 'MSK', 'г.Минск, пр. Победителей, 84'),
-			(4341, 'ALFA', 'VTBK', 'г. Витебск, ул. Космонавтов, 11'),
-			(6627, 'BLBB', 'GDN', 'г. Гродно, ул. Мицкевича, 3'),
-			(3441, 'POIS', 'GML', 'г. Гомель, пр. Ленина, 29А'),
-			(4567, 'PJCB', 'BST', 'г. Брест, б-р Шевченко, 6/1')
+	values (1001, 'AKBB', 'MSK', 'Minsk, pr. Nezavisemosti, 91'),
+			(2001, 'AKBB', 'MGL', 'Mogilev, pr. Pushkinskiy, 34-41'),
+			(1045, 'BAPB', 'MSK', 'Minsk, pr. Pobediteley, 84'),
+			(4341, 'ALFA', 'VTBK', 'Vitebsk, ul. Cosmonavtov, 11'),
+			(6627, 'BLBB', 'GDN', 'Grodno, el. Mitskevicha, 3'),
+			(3441, 'POIS', 'GML', 'Gomel, pr. Lenina, 29A'),
+			(4567, 'PJCB', 'BST', 'Brest, b-r Shevchenko, 6/1')
 
 select * from Banks_Branches
 go
@@ -71,12 +71,12 @@ create table Social_Statuses
 )
 
 insert into Social_Statuses (Id, Name)
-	values ('ST_EMP', 'Государственный служащий'),
-			('PENS', 'Пенсионер'),
-			('DIS', 'Инвалид'),
-			('VET', 'Ветеран'),
-			('LGFAM', 'Имеет многодетную семью'),
-			('ORPH', 'Сирота')
+	values ('ST_EMP', 'State employee'),
+			('PENS', 'Pensioner'),
+			('DIS', 'Disabled person'),
+			('VET', 'Veteran'),
+			('LGFAM', 'Have a large family'),
+			('ORPH', 'Orphan')
 
 select * from Social_Statuses
 go
@@ -92,13 +92,13 @@ create table Clients
 )
 
 insert into Clients (Surname, Firstname, Patronymic, Passport_number, Phone_number)
-	values ('Стеблов', 'Александр', 'Васильевич', 'MP5682315', '80296724144'),
-			('Курейчик', 'Наталья', 'Георгиевна', 'AB6281552', '+375446776635'),
-			('Бурак', 'Татьяна', 'Николаевна', 'BM6788127', '+375295288241'),
-			('Васильев', 'Петр', 'Леонидович', 'HB5689124', '80253565251'),
-			('Шибко', 'Анастасия', 'Александровна', 'MC5689781', '80294556121'),
-			('Клюкач', 'Павел', 'Николаевич', 'MP4545215', '+375442234567'),
-			('Парамонов', 'Алексей', 'Евгеньевич', 'HB5625356', '80254544227')
+	values ('Steblov', 'Alexander', 'Vasilievich', 'MP5682315', '80296724144'),
+			('Kureichik', 'Natalia', 'Georgievna', 'AB6281552', '+375446776635'),
+			('Burak', 'Tatiana', 'Nikolaevna', 'BM6788127', '+375295288241'),
+			('Vasiliev', 'Petr', 'Leonidovich', 'HB5689124', '80253565251'),
+			('Shibko', 'Anastasia', 'Alexandrovna', 'MC5689781', '80294556121'),
+			('Klukach', 'Pavel', 'Nikolaevich', 'MP4545215', '+375442234567'),
+			('Paramonov', 'Aleksei', 'Evgenievna', 'HB5625356', '80254544227')
 
 select * from Clients;
 go
@@ -201,7 +201,7 @@ go
 /*Task section*/
 
 /*1. select banks that have branches in a certain city*/
-declare @city nvarchar(50) = 'Минск'
+declare @city nvarchar(50) = 'Minsk'
 
 select * from Banks_Branches 
 	join Banks on Banks_Branches.Bank = Banks.Id
